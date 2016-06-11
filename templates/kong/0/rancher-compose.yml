@@ -1,6 +1,6 @@
 .catalog:
   name: Kong
-  version: v0.8.0-postgres
+  version: v0.8.3-postgres
   description: |
     Kong API Gateway
   minimum_rancher_version: v1.0.0
@@ -11,7 +11,8 @@
       description: "Link to Kong database service or stack"
       label: "Database link"
       type: "service"
-      required: false
+      default: "no-link"
+      required: true
     - variable: "postgres_host"
       description: "PostgreSQL Host Name"
       label: "PostgreSQL host:"
