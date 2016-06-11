@@ -1,6 +1,6 @@
 .catalog:
   name: Kong
-  version: v0.8.3-postgres
+  version: v0.8.3
   description: |
     Kong API Gateway
   minimum_rancher_version: v1.0.0
