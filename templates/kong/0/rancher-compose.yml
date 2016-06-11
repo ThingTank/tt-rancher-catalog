@@ -43,7 +43,6 @@
       default: "kong" 
       type: "string"
 kong:
-  scale: global
   retain_ip: true
   health_check:
     port: 8001
