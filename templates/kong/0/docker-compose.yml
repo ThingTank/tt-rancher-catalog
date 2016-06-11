@@ -22,16 +22,4 @@ kong:
     io.rancher.scheduler.global: 'true'
     io.rancher.container.pull_image: always
     io.rancher.container.hostname_override: container_name
-    io.rancher.sidekicks: kong-conf
   tty: true
-  volumes_from:
-    - kong-conf
-kong-conf:
-  image: busybox
-  net: none
-  labels:
-    io.rancher.container.hostname_override: container_name
-    io.rancher.container.start_once: true
-  volumes:
-    - /etc/kong/
-  entrypoint: /bin/true
