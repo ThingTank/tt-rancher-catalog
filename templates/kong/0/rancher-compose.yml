@@ -1,42 +1,46 @@
 .catalog:
   name: Kong
-  version: v0.8.0
+  version: v0.8.0-postgres
   description: |
-    Kong API & Microservices Gateway
+    Kong API Gateway
   minimum_rancher_version: v1.0.0
   maintainer: "Yun Zhi Lin<yun@yunspace.com>"
   uuid: kong-0
   questions:
-    - variable: "database"
-      description: "Postgres or Cassandra"
-      required: true
-      type: enum
-      options:
-        - "postgres"
-        - "canssandra"
+    - variable: "database_link"
+      description: "Link to Kong database service or stack"
+      label: "Database link"
+      type: "service"
+      required: false
     - variable: "postgres_host"
       description: "PostgreSQL Host Name"
-      label: "PostgreSQL Host:"
+      label: "PostgreSQL host:"
       required: true
       default: "kong-database"
       type: "string"
+    - variable: "postgres_port"
+      description: "PostgreSQL port"
+      label: "PostgreSQL port:"
+      required: true
+      default: 5432
+      type: int
     - variable: "postgres_db"
       description: "PostgreSQL database" 
-      label: "Postgres Databae Name:"
+      label: "Postgres database:"
       required: false
       default: "kong"
       type: "string"
     - variable: "postgres_user"
       description: "PostgreSQL username"
-      label: "PostgreSQL Username:"
+      label: "PostgreSQL username:"
       required: true
       default: "kong"
       type: "string"
     - variable: "postgres_password"
       description: "PostgreSQL password"
-      label: "Admin port:"
+      label: "PostgreSQL password:"
       required: true
-      default: 8000 
+      default: "kong" 
       type: "string"
 kong:
   scale: global
