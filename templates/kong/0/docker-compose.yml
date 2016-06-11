@@ -8,17 +8,16 @@ kong:
   - 8443:8443/tcp
   environment:
     CLUSTER_LISTEN: rancher
-    DATABASE: {db_choice}
+    DATABASE: {db_type}
     POSTGRES_HOST: ${db_host}
     POSTGRES_PORT: ${db_port}
     POSTGRES_USER: ${db_user}
     POSTGRES_PASSWORD: ${db_password}
     POSTGRES_DB: ${db_name}
-    CASSANDRA_CONTACT_POINTS: ${db_host}
-    POSTGRES_PORT: ${db_port}
-    CASSANDRA_USER: ${db_user}
-    CASSANDRA_PASSWORD: ${db_password}
-    CASSANDRA_KEYSPACE: ${db_name}
+    # CASSANDRA_CONTACT_POINTS: ${db_host}
+    # CASSANDRA_USER: ${db_user}
+    # CASSANDRA_PASSWORD: ${db_password}
+    # CASSANDRA_KEYSPACE: ${db_name}
   labels:
     io.rancher.scheduler.global: 'true'
     io.rancher.container.pull_image: always
