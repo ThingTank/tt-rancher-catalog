@@ -17,3 +17,5 @@ After the cluster spins up, you should be able to access:
 
 - kong on port `8001`
 - kong-dashboard on port `8080`
+
+When adding APIs, you can use Rancher `http://servicename.stackname` as your upstream URLs, instead of specifying the full external DNS name.

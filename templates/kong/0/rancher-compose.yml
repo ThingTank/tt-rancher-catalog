@@ -7,39 +7,36 @@
   maintainer: "Yun Zhi Lin<yun@yunspace.com>"
   uuid: kong-0
   questions:
-    - variable: "database_link"
-      description: "Link to Kong database service or stack"
-      label: "Database link"
-      type: "service"
-      default: "no-link"
+    - variable: "db_type"
+      label: "DB Type:"
       required: true
-    - variable: "postgres_host"
-      description: "PostgreSQL Host Name"
-      label: "PostgreSQL host:"
+      type: enum
+      options:
+        - "postgres"
+        - "canssandra"
+    - variable: "db_host"
+      description: "Either: PostgreSQL Host Name, Cassandra Contact Points or Rancher Service Link"
+      label: "DB Host:"
       required: true
-      default: "kong-database"
       type: "string"
-    - variable: "postgres_port"
-      description: "PostgreSQL port"
+    - variable: "db_port"
+      description: "PostgreSQL only, not applicable for Cassandra"
       label: "PostgreSQL port:"
-      required: true
       default: 5432
       type: int
-    - variable: "postgres_db"
-      description: "PostgreSQL database" 
-      label: "Postgres database:"
+    - variable: "db_name"
+      description: "Name of the database/keyspace" 
+      label: "DB Name"
       required: false
       default: "kong"
       type: "string"
-    - variable: "postgres_user"
-      description: "PostgreSQL username"
-      label: "PostgreSQL username:"
+    - variable: "db_user"
+      label: "DB Username:"
       required: true
       default: "kong"
       type: "string"
-    - variable: "postgres_password"
-      description: "PostgreSQL password"
-      label: "PostgreSQL password:"
+    - variable: "db_password"
+      label: "DB password:"
       required: true
       default: "kong" 
       type: "string"
