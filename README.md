@@ -1,9 +1,14 @@
-# Rancher Community Catalog 
+# Little Bay Rancher Catalog 
 
-This catalog provides templates created by the community, and they are not maintained or supported by Rancher Labs.
+This catalog provides templates created and supported by Little Bay Digital, collated from production service use cases. 
+
+## Contents
+
+- [Kong API Gateway](https://github.com/LittleBayDigital/docker-kong-service)
+- HTTP to HTTPS Redirect (WIP)
 
 # License
-Copyright (c) 2014-2016 [Rancher Labs, Inc.](http://rancher.com)
+Copyright (c) 2014-2016 [Little Bay Digital](http://www.littlebay.digital)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

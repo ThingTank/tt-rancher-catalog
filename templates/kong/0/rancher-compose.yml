@@ -8,37 +8,38 @@
   uuid: kong-0
   questions:
     - variable: "db_type"
-      label: "DB Type:"
+      label: "Database Type:"
       required: true
       type: enum
       options:
         - "postgres"
         - "canssandra"
     - variable: "db_host"
-      description: "Either: PostgreSQL Host Name, Cassandra Contact Points or Rancher Service Link"
+      description: "PostgreSQL Host or Cassandra Contact Points using either DNS or Rancher Service Name"
       label: "DB Host:"
       required: true
       type: "string"
     - variable: "db_port"
-      description: "PostgreSQL only, not applicable for Cassandra"
-      label: "PostgreSQL port:"
+      description: "Database Port used by PostgreSQL, Cassandra ports are already included in the Contact Points"
+      label: "Database Port (PostgreSQL only)"
+      required: false
       default: 5432
       type: int
     - variable: "db_name"
-      description: "Name of the database/keyspace" 
-      label: "DB Name"
-      required: false
+      description: "Name of the database or keyspace" 
+      label: "Database Name"
+      required: true
       default: "kong"
       type: "string"
     - variable: "db_user"
-      label: "DB Username:"
-      required: true
-      default: "kong"
+      description: "Username is mandatory for PostgreSQL" 
+      label: "Database Username:"
+      required: false
       type: "string"
     - variable: "db_password"
-      label: "DB password:"
-      required: true
-      default: "kong" 
+      description: "Password is optional both PostgreSQL and Cassandra" 
+      label: "Database password:"
+      required: false
       type: "string"
 kong:
   retain_ip: true

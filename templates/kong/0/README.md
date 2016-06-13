@@ -7,15 +7,20 @@ This service uses Rancher Meta Data service to work out the correct container IP
 exposes necessary environment variables for easy connectivity with external Kong database.
 
 ### Config:
-For Kong database host field, you can either:
 
-- select an existing database service in `database link` and leave the `host` as the default value.
-- leave `database link` empty and replace `host` with an external database such as RDS.
+Once you select either PostgreSQL or Cassandra database backend, for `DB Hostname` you can either specify:
+
+- PostgreSQL Host - either DNS record or a Rancher service in the format of `postgres-servicename.stackname`
+- Cassandra Contact Points - in the format of `\"ip1:9046\",\"ip2:9046\"`, or a Rancher services in the format of ``\"cassandra-servicename.stackname:9046\"` 
+
+### Database Requirements
+
+PostgresSQL by default requires the specified database and username to already exist prior to service staring. Password is optional.
+
+Cassandra by default does not require username nor password and it will automatically create the specified keyspace.
 
 ### Usage:
 After the cluster spins up, you should be able to access:
 
 - kong on port `8001`
 - kong-dashboard on port `8080`
-
-When adding APIs, you can use Rancher `http://servicename.stackname` as your upstream URLs, instead of specifying the full external DNS name.
