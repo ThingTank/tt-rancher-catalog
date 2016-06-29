@@ -11,7 +11,7 @@ exposes necessary environment variables for easy connectivity with external Kong
 Once you select either PostgreSQL or Cassandra database backend, for `DB Hostname` you can either specify:
 
 - PostgreSQL Host - either DNS record or a Rancher service in the format of `postgres-servicename.stackname`
-- Cassandra Contact Points - in the format of `\"ip1:9046\",\"ip2:9046\"`, or a Rancher services in the format of ``\"cassandra-servicename.stackname:9046\"` 
+- Cassandra Contact Points - in the format of `\"ip1:9046\",\"ip2:9046\"`, or a Rancher services in the format of `\"cassandra-servicename.stackname:9046\"` 
 
 ### Database Requirements
 
