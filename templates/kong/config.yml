@@ -1,6 +1,6 @@
 name: Kong
 description: |
-  Kong API Gateway
+  Open-Source API Management and Microservice Management
 version: v0.8.0
 category: Load Balancing
 maintainer: "Yun Zhi Lin <yun@yunspace.com>"
