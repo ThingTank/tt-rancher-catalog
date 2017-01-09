@@ -1,7 +1,7 @@
 name: Kong
 description: |
   Open-Source API Management and Microservice Management
-version: v0.8.0
+version: v0.9.7
 category: Load Balancing
 maintainer: "Yun Zhi Lin <yun@yunspace.com>"
 minimum_rancher_version: v1.0.0
