@@ -23,11 +23,4 @@ kong:
     io.rancher.container.pull_image: always
     io.rancher.container.hostname_override: container_name
   tty: true
-kong-dashboard:
-  image: pgbi/kong-dashboard
-  ports:
-    - 8080:8080/tcp
-  labels:
-    io.rancher.scheduler.global: 'true'
-    io.rancher.container.pull_image: always
-  tty: true
+
